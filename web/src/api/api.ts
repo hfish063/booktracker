@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.API_BASE_URL;
+const API_BASE_URL = "http://localhost:8080/api";
 
 async function apiFetch(path: string, options?: RequestInit) {
   return await fetch(`${API_BASE_URL}${path}`, {

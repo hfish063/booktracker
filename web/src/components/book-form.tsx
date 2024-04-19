@@ -71,7 +71,7 @@ export default function Form({ setBooks }: FormParams) {
     } else if (Array.isArray(id)) {
     }
 
-    const parent = await getReadingList(params.listId as string);
+    const parent = await getReadingList(id as string);
     const result = await saveBook({
       title: formData.title[0],
       author: formData.author[0],

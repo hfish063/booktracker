@@ -10,7 +10,7 @@ export default function CardList({ data }: CardListParams) {
             key={book.id}
             header={book.title}
             content={book.author}
-            link={`/list/${book.id}`}
+            link={`/list/${book.readingListId}/${book.id}`}
           />
         );
       })}

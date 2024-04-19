@@ -1,6 +1,5 @@
 import { UUID } from "crypto";
 
-// TODO: .env variable
 const API_BASE_URL = process.env.API_BASE_URL;
 
 async function apiFetch(path: string, options?: RequestInit) {

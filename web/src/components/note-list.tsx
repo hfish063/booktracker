@@ -1,6 +1,7 @@
 import { Note, deleteNote } from "@/api/api";
 import DateBadge from "./date-badge";
 import { Dispatch, SetStateAction } from "react";
+import { Button } from "./ui/button";
 
 export default function NoteList({ data, setNotes }: NoteListParams) {
   function handleClick(id: string) {
@@ -19,16 +20,18 @@ export default function NoteList({ data, setNotes }: NoteListParams) {
             className="flex justify-between group px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200"
             key={note.id}
           >
-            <div className="flex flex-col items-start break-all">
+            <div className="flex flex-col items-start text-wrap">
               <DateBadge date={note.createdAt} />
-              {note.text}
+              <div className="break-all">{note.text}</div>
             </div>
-            <button
-              className="invisible group-hover:visible bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 mt-2 mb-2 rounded"
+
+            <Button
+              className="self-center invisible group-hover:visible ml-4 mt-2 mb-2 h-full"
+              variant="outline"
               onClick={() => handleClick(note.id)}
             >
               Delete
-            </button>
+            </Button>
           </li>
         );
       })}

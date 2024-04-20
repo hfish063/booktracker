@@ -1,17 +1,21 @@
 import { Book } from "@/api/api";
-import Card from "./card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 export default function CardList({ data }: CardListParams) {
   return (
-    <ul className="flex flex-wrap">
+    <ul className="grid grid-cols-3 grid-flow-row gap-4">
       {data.map((book) => {
         return (
-          <Card
-            key={book.id}
-            header={book.title}
-            content={book.author}
-            link={`/list/${book.readingListId}/${book.id}`}
-          />
+          <a key={book.id} href={`/list/${book.readingListId}/${book.id}`}>
+            <Card className="hover:bg-sky-100 hover:text-sky-900">
+              <CardHeader>
+                <CardTitle>{book.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="line-clamp-1">{book.author}</p>
+              </CardContent>
+            </Card>
+          </a>
         );
       })}
     </ul>

@@ -2,6 +2,7 @@
 
 import { Note, NoteModel, getBook, saveNote } from "@/api/api";
 import { Dispatch, SetStateAction, useState } from "react";
+import { Button } from "./ui/button";
 
 export default function NoteForm({ id, setNotes }: NoteFormParams) {
   const [formData, setFormData] = useState({ text: "" });
@@ -16,12 +17,9 @@ export default function NoteForm({ id, setNotes }: NoteFormParams) {
         onChange={(e) => handleChange(e)}
         required
       ></textarea>
-      <button
-        type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-2 mb-2"
-      >
+      <Button type="submit" className="mt-2 mb-2">
         Submit
-      </button>
+      </Button>
     </form>
   );
 

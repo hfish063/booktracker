@@ -1,6 +1,7 @@
 "use client";
 import { deleteBook } from "@/api/api";
 import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
 export default function DeleteBookButton({ label, id }: DeleteButtonParams) {
   const router = useRouter();
@@ -13,13 +14,9 @@ export default function DeleteBookButton({ label, id }: DeleteButtonParams) {
   }
 
   return (
-    <button
-      type="button"
-      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-32 mt-2 md-2"
-      onClick={() => handleClick()}
-    >
+    <Button className="mt-2 mb-2" variant={"destructive"} onClick={handleClick}>
       {label}
-    </button>
+    </Button>
   );
 }
 

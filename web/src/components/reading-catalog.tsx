@@ -1,6 +1,6 @@
 import { ReadingList } from "@/api/api";
 import { Dispatch, SetStateAction } from "react";
-import { Link } from "./link";
+import { Button } from "./ui/button";
 
 export default function ReadingCatalog({
   data,
@@ -11,7 +11,9 @@ export default function ReadingCatalog({
       {data.map((readingList) => {
         return (
           <li key={readingList.id}>
-            <Link path={"/list/" + readingList.id} text={readingList.title} />
+            <a href={"/list/" + readingList.id}>
+              <Button variant="link">{readingList.title}</Button>
+            </a>
           </li>
         );
       })}

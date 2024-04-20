@@ -8,21 +8,25 @@ export default function DetailsWrapper({
   bookId,
 }: DetailsWrapperParams) {
   return (
-    <>
+    <div>
       <BookHeading bookId={bookId} />
       <hr></hr>
-      <div className="flex items-top mt-4">
+      <div className="flex h-80">
         <Image
-          className="flex-none mt-2 mb-2 mr-4"
+          className="mt-2 mb-2 mr-4"
           src={details.image_url}
           alt="Book cover image"
           width={200}
           height={200}
         />
-        <p className="mt-2 mb-2 ">{details.description}</p>
+        <p className="overflow-hidden text-pretty mt-2 mb-2">
+          {details.description}
+        </p>
       </div>
-      <DeleteBookButton label="Delete Book" id={bookId} />
-    </>
+      <div>
+        <DeleteBookButton label="Delete Book" id={bookId} />
+      </div>
+    </div>
   );
 }
 

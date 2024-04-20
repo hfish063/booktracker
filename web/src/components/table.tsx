@@ -1,12 +1,12 @@
 "use client";
 
 import { Book } from "@/api/api";
-import { Link } from "./link";
 import { usePathname } from "next/navigation";
+import { Button } from "./ui/button";
 
 export default function Table({ columns, data }: TableProps) {
   return (
-    <table className="table auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mt-2 mb-2">
+    <table className="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mt-2 mb-2">
       <TableHead columns={columns} />
       <TableBody data={data} />
     </table>
@@ -16,7 +16,7 @@ export default function Table({ columns, data }: TableProps) {
 function TableHead({ columns }: TableHeadProps) {
   var colIndex = 0;
   return (
-    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <thead className="text-left text-xs text-white uppercase bg-black">
       <tr key={"header"}>
         {columns.map((column) => {
           return (
@@ -33,14 +33,16 @@ function TableHead({ columns }: TableHeadProps) {
 function TableBody({ data }: TableBodyProps) {
   const pathname = usePathname();
   return (
-    <tbody>
+    <tbody className="text-left">
       {data.map((book) => {
         return (
-          <tr key={book.id}>
+          <tr key={book.id} className="hover:bg-sky-100 hover:text-sky-900">
             <td>{book.title}</td>
             <td>{book.author}</td>
             <td>
-              <Link path={`${pathname}/${book.id}`} text="Details" />
+              <a href={`${pathname}/${book.id}`}>
+                <Button variant="link">Details</Button>
+              </a>
             </td>
           </tr>
         );

@@ -2,6 +2,7 @@ import { BookDetails } from "@/api/api";
 import BookHeading from "./book-heading";
 import DeleteBookButton from "./delete-book-button";
 import Image from "next/image";
+import { ScrollArea } from "./ui/scroll-area";
 
 export default function DetailsWrapper({
   details,
@@ -19,9 +20,11 @@ export default function DetailsWrapper({
           width={200}
           height={200}
         />
-        <p className="overflow-hidden text-pretty mt-2 mb-2">
-          {details.description}
-        </p>
+        <div className="overflow-hidden text-pretty mt-2 mb-2">
+          <ScrollArea className="h-[350px] w-[full]">
+            {details.description}
+          </ScrollArea>
+        </div>
       </div>
       <div>
         <DeleteBookButton label="Delete Book" id={bookId} />

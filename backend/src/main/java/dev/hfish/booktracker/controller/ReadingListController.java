@@ -33,4 +33,14 @@ public class ReadingListController {
     public ReadingList saveReadingList(@RequestBody ReadingList theReadingList) {
         return readingListService.save(theReadingList);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteReadingList(@PathVariable("id") UUID theId) {
+        readingListService.deleteById(theId);
+    }
+
+    @DeleteMapping("/delete/all")
+    public void deleteAllReadingLists() {
+        readingListService.deleteAll();
+    }
 }

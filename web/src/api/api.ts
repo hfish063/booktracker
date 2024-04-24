@@ -100,6 +100,31 @@ export async function getReadingList(id: string) {
   return (await result.json()) as ReadingList;
 }
 
+export async function saveReadingList(list: ReadingList) {
+  const options = {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify(list),
+  };
+
+  const result = await apiFetch("/list/save", options);
+  return (await result.json()) as ReadingList;
+}
+
+export async function deleteReadingList(id: string) {
+  await fetch(`${API_BASE_URL}/list/delete/${id}`, {
+    cache: "no-store",
+    method: "DELETE",
+  });
+}
+
+export async function deleteAllReadingLists() {
+  await fetch(`${API_BASE_URL}/notes/all`, {
+    cache: "no-store",
+    method: "DELETE",
+  });
+}
+
 export type Book = {
   id: string;
   title: string;

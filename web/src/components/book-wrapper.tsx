@@ -7,7 +7,6 @@ import ToggleButton from "./toggle-button";
 import { useState } from "react";
 import CardList from "./card-list";
 
-/// Client side wrapper for form and table components
 export default function BookWrapper({ data }: BookWrapperParams) {
   const [books, setBooks] = useState(data);
   const [showTable, setTable] = useState(true);

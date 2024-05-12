@@ -20,7 +20,7 @@ export default function ReadingCatalog({
       {data.map((readingList) => {
         return (
           <li key={readingList.id} className="group mt-2 md-2">
-            <Card className="hover:bg-sky-100 hover:text-sky-900">
+            <Card className="border-l-8 border-green-600 hover:bg-sky-100 hover:text-sky-900">
               <CardHeader>
                 <CardTitle>{readingList.title}</CardTitle>
               </CardHeader>

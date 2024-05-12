@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="relative flex min-h-screen ">
           <NavBar />
           <div className="flex flex-1 justify-center">
-            <main className="flex flex-col container overflow-hidden py-5 px-8">
+            <main className="flex flex-col container overflow-hidden py-5 px-8 shadow">
               {children}
             </main>
           </div>

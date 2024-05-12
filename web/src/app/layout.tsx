@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./main.css";
-import Header from "@/components/header";
+import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="relative flex min-h-screen ">
-          <Header />
+          <NavBar />
           <div className="flex flex-1 justify-center">
             <main className="flex flex-col container overflow-hidden py-5 px-8">
               {children}

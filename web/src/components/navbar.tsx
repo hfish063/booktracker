@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 
-export default function Header() {
+export default function NavBar() {
   return (
     <>
       <header className="flex flex-col bg-green-700">

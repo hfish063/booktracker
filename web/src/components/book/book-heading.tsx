@@ -1,4 +1,3 @@
-import { DetailParams } from "@/app/list/[uuid]/[uuid]/page";
 import { BookModel, getBook } from "@/api/api";
 
 export default async function BookHeading({ bookId }: BookHeadingParams) {

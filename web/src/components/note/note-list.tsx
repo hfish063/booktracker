@@ -13,7 +13,7 @@ export default function NoteList({ data, setNotes }: NoteListParams) {
   }
 
   return (
-    <ul className="border border-gray-200 rounded overflow-hidden shadow-md w-1/2 mt-2 md-2">
+    <ul className="border border-green-600 rounded overflow-hidden shadow-md w-1/2 mt-2 md-2">
       {data.map((note) => {
         return (
           <li
@@ -27,7 +27,7 @@ export default function NoteList({ data, setNotes }: NoteListParams) {
 
             <Button
               className="self-center invisible group-hover:visible ml-4 mt-2 mb-2 h-full"
-              variant="outline"
+              variant="destructive"
               onClick={() => handleClick(note.id)}
             >
               Delete

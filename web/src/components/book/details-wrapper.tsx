@@ -12,13 +12,13 @@ export default function DetailsWrapper({
     <div>
       <BookHeading bookId={bookId} />
       <hr></hr>
-      <div className="flex h-80">
+      <div className="flex">
         <Image
-          className="mt-2 mb-2 mr-4"
+          className="flex-none mt-2 mb-2 mr-4"
           src={details.image_url}
           alt="Book cover image"
-          width={200}
-          height={200}
+          width={250}
+          height={250}
         />
         <div className="overflow-hidden text-pretty mt-2 mb-2">
           <ScrollArea className="h-[350px] w-[full]">
@@ -26,9 +26,7 @@ export default function DetailsWrapper({
           </ScrollArea>
         </div>
       </div>
-      <div>
-        <DeleteBookButton label="Delete Book" id={bookId} />
-      </div>
+      <DeleteBookButton label="Delete Book" id={bookId} />
     </div>
   );
 }

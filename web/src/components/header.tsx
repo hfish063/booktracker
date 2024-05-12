@@ -4,10 +4,17 @@ import { Button } from "./ui/button";
 export default function Header() {
   return (
     <>
-      <header className="py-6 px-8 bg-green-700">
-        <Button variant="ghost">
-          <Link href="/">Home</Link>
-        </Button>
+      <header className="flex flex-col bg-green-700">
+        <Link href="/">
+          <Button className=" py-6 px-8 w-full" variant="ghost">
+            Home
+          </Button>
+        </Link>
+        <Link href="/list">
+          <Button className="py-6 px-8 w-full" variant="ghost">
+            Reading Lists
+          </Button>
+        </Link>
       </header>
       <hr></hr>
     </>

@@ -38,7 +38,7 @@ export default function ReadingCatalog({
                     </a>
                     <Button
                       className="self-center invisible group-hover:visible ml-4 mt-2 mb-2"
-                      variant="outline"
+                      variant="destructive"
                       onClick={() => handleClick(readingList.id)}
                     >
                       Delete

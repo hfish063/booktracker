@@ -1,11 +1,4 @@
-const API_BASE_URL = "http://localhost:8080/api";
-
-async function apiFetch(path: string, options?: RequestInit) {
-  return await fetch(`${API_BASE_URL}${path}`, {
-    cache: "no-store",
-    ...options,
-  });
-}
+import { apiFetch } from "./lib/utils";
 
 export async function getBooks() {
   const result = await apiFetch("/book/all");
@@ -40,7 +33,7 @@ export async function saveBook(book: BookModel) {
 
 // TODO: shorthand implementation
 export async function deleteBook(id: string) {
-  await fetch(`${API_BASE_URL}/book/delete/${id}`, {
+  await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/book/delete/${id}`, {
     cache: "no-store",
     method: "DELETE",
   });
@@ -82,7 +75,7 @@ export async function saveNote(note: NoteModel) {
 }
 
 export async function deleteNote(id: string) {
-  await fetch(`${API_BASE_URL}/notes/delete/${id}`, {
+  await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/notes/delete/${id}`, {
     cache: "no-store",
     method: "DELETE",
   });
@@ -110,14 +103,14 @@ export async function saveReadingList(list: ReadingList) {
 }
 
 export async function deleteReadingList(id: string) {
-  await fetch(`${API_BASE_URL}/list/delete/${id}`, {
+  await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/list/delete/${id}`, {
     cache: "no-store",
     method: "DELETE",
   });
 }
 
 export async function deleteAllReadingLists() {
-  await fetch(`${API_BASE_URL}/notes/all`, {
+  await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/notes/all`, {
     cache: "no-store",
     method: "DELETE",
   });

@@ -2,7 +2,7 @@ import { BookDetails } from "@/api/api";
 import BookHeading from "./book-heading";
 import DeleteBookButton from "./delete-book-button";
 import Image from "next/image";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "../ui/scroll-area";
 
 export default function DetailsWrapper({
   details,

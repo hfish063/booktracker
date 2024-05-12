@@ -1,5 +1,5 @@
 import { getBooksForReadingList } from "@/api/api";
-import BookWrapper from "@/components/book-wrapper";
+import BookWrapper from "@/components/book/book-wrapper";
 
 export default async function Catalog({ params }: CatalogParams) {
   const books = await getBooksForReadingList(params.listId);

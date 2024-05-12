@@ -1,7 +1,7 @@
 import { Note, deleteNote } from "@/api/api";
-import DateBadge from "./date-badge";
+import DateBadge from "../date-badge";
 import { Dispatch, SetStateAction } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export default function NoteList({ data, setNotes }: NoteListParams) {
   function handleClick(id: string) {

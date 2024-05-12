@@ -2,7 +2,7 @@
 
 import { ReadingList, saveReadingList } from "@/api/api";
 import { Dispatch, SetStateAction, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export default function ReadingListForm({ setReadingLists }: FormParams) {
   const [formData, setFormData] = useState({ title: "", body: "" });

@@ -1,7 +1,7 @@
 import { ReadingList, deleteReadingList } from "@/api/api";
 import { Dispatch, SetStateAction } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
 
 export default function ReadingCatalog({
   data,
@@ -35,14 +35,14 @@ export default function ReadingCatalog({
                       >
                         View
                       </Button>
-                      <Button
-                        className="self-center invisible group-hover:visible ml-4 mt-2 mb-2"
-                        variant="outline"
-                        onClick={() => handleClick(readingList.id)}
-                      >
-                        Delete
-                      </Button>
                     </a>
+                    <Button
+                      className="self-center invisible group-hover:visible ml-4 mt-2 mb-2"
+                      variant="outline"
+                      onClick={() => handleClick(readingList.id)}
+                    >
+                      Delete
+                    </Button>
                   </div>
                 </div>
               </CardContent>

@@ -2,7 +2,7 @@
 
 import { Note, NoteModel, getBook, saveNote } from "@/api/api";
 import { Dispatch, SetStateAction, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export default function NoteForm({ id, setNotes }: NoteFormParams) {
   const [formData, setFormData] = useState({ text: "" });

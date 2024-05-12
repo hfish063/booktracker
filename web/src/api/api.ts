@@ -34,8 +34,6 @@ export async function saveBook(book: BookModel) {
     body: JSON.stringify(book),
   };
 
-  console.log(book);
-
   const result = await apiFetch("/book/save", options);
   return (await result.json()) as Book;
 }

@@ -1,7 +1,7 @@
 "use client";
 import { deleteBook } from "@/api/api";
 import { useRouter } from "next/navigation";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export default function DeleteBookButton({ label, id }: DeleteButtonParams) {
   const router = useRouter();

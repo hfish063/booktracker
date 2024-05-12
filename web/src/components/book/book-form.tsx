@@ -3,7 +3,7 @@
 import { Book, BookModel, getReadingList, saveBook } from "@/api/api";
 import { useParams } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export default function Form({ setBooks }: FormParams) {
   const [formData, setFormData] = useState({ title: "", author: "" });

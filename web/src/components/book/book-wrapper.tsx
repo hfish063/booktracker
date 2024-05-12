@@ -2,21 +2,21 @@
 
 import { Book } from "@/api/api";
 import Form from "./book-form";
-import Table from "./table";
-import ToggleButton from "./toggle-button";
+import Table from "../table";
+import ToggleButton from "../toggle-button";
 import { useState } from "react";
-import CardList from "./card-list";
+import CardList from "../card-list";
 
 export default function BookWrapper({ data }: BookWrapperParams) {
   const [books, setBooks] = useState(data);
   const [showTable, setTable] = useState(true);
   if (!showTable) {
     return (
-      <>
+      <div>
         <Form setBooks={setBooks} />
         <ToggleButton handleClick={setTable} />
         <CardList data={books} />
-      </>
+      </div>
     );
   }
   return (

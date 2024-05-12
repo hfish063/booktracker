@@ -6,7 +6,7 @@ export default function NavBar() {
     <>
       <header className="flex flex-col bg-green-700">
         <Link href="/">
-          <Button className=" py-6 px-8 w-full" variant="ghost">
+          <Button className="py-6 px-8 w-full" variant="ghost">
             Home
           </Button>
         </Link>

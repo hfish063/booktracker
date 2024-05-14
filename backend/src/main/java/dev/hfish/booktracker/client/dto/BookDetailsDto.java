@@ -1,4 +1,4 @@
-package dev.hfish.booktracker.client.model;
+package dev.hfish.booktracker.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.hfish.booktracker.entities.Book;

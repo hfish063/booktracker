@@ -1,6 +1,6 @@
 package dev.hfish.booktracker.client;
 
-import dev.hfish.booktracker.client.model.BookDetailsDto;
+import dev.hfish.booktracker.client.dto.BookDetailsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;

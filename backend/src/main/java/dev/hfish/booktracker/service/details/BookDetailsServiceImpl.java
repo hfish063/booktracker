@@ -1,7 +1,7 @@
 package dev.hfish.booktracker.service.details;
 
 import dev.hfish.booktracker.client.RestClient;
-import dev.hfish.booktracker.client.model.BookDetailsDto;
+import dev.hfish.booktracker.client.dto.BookDetailsDto;
 import dev.hfish.booktracker.entities.Book;
 import dev.hfish.booktracker.entities.BookDetails;
 import dev.hfish.booktracker.repository.BookDetailsRepository;

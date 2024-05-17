@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Button } from "../ui/button";
 
-export default function Form({ setBooks }: FormParams) {
+export default function BookForm({ setBooks }: FormParams) {
   const [formData, setFormData] = useState({ title: "", author: "" });
   const params = useParams();
 

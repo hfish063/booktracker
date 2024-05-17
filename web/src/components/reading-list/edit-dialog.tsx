@@ -52,8 +52,7 @@ function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
         for (let i = 0; i < newReadingList.length; i++) {
           if (newReadingList[i].id == id) {
             // update corresponding field with user-provided data
-            newReadingList[i].title = result.title;
-            newReadingList[i].body = result.body;
+            newReadingList[i] = result;
           }
         }
 

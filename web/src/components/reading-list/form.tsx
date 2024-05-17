@@ -8,8 +8,8 @@ export default function ReadingListForm({ setReadingLists }: FormParams) {
   const [formData, setFormData] = useState({ title: "", body: "" });
 
   return (
-    <form className="mt-2 mb-2" onSubmit={(e) => handleSubmit(e)}>
-      <div className="grid gap-6 mb-4 md:grid-cols-2">
+    <form className="space-y-4" onSubmit={(e) => handleSubmit(e)}>
+      <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label
             htmlFor="title"

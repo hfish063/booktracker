@@ -32,7 +32,10 @@ export default function ReadingCatalog({
                     <a href={"/list/" + readingList.id}>
                       <Button variant="link">View</Button>
                     </a>
-                    <EditReadingListDialog />
+                    <EditReadingListDialog
+                      id={readingList.id}
+                      setReadingLists={setReadingLists}
+                    />
                     <Button
                       variant="destructive"
                       onClick={() => handleClick(readingList.id)}

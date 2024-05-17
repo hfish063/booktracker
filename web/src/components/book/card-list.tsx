@@ -1,7 +1,7 @@
 import { Book } from "@/api/api";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-export default function CardList({ data }: CardListParams) {
+export default function BookCardList({ data }: CardListParams) {
   return (
     <ul className="grid grid-cols-3 grid-flow-row gap-4">
       {data.map((book) => {

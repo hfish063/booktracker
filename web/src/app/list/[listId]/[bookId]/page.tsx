@@ -1,5 +1,5 @@
 import { getAllNotesForBook, getDetails } from "@/api/api";
-import NoteWrapper from "@/components/note/note-wrapper";
+import NoteWrapper from "@/components/note/wrapper";
 import DetailsWrapper from "@/components/book/details-wrapper";
 import { Button } from "@/components/ui/button";
 

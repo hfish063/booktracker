@@ -35,25 +35,31 @@ export default function EditReadingListDialog({
 }
 
 function EditReadingListForm({ list, setReadingLists }: EditReadingListParams) {
-  const [formData, setFormData] = useState({ title: "", body: "" });
+  const [formData, setFormData] = useState({
+    title: list.title,
+    body: list.body || "",
+  });
   const id = list.id;
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    console.log(formData);
+
     const result = await saveReadingList({
       id: id,
-      title: formData.title[0],
-      body: formData.body[0],
+      title: formData.title.toString(),
+      body: formData.body.toString(),
     } as ReadingList);
+
+    console.log(result);
 
     if (result) {
       setReadingLists((readingLists) => {
         const newData: ReadingList[] = readingLists.slice();
         for (let i = 0; i < newData.length; i++) {
           if (newData[i].id == id) {
-            // update corresponding field with user-provided data
-            newData[i] = result;
+            newData[i] = result; // update corresponding field with user-provided data
           }
         }
 
@@ -85,7 +91,7 @@ function EditReadingListForm({ list, setReadingLists }: EditReadingListParams) {
             id="title"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Title"
-            value={list.title}
+            defaultValue={list.title}
             onChange={(e) => handleChange(e)}
             required
           />
@@ -102,7 +108,7 @@ function EditReadingListForm({ list, setReadingLists }: EditReadingListParams) {
             id="body"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Body"
-            value={list.body}
+            defaultValue={list.body}
             onChange={(e) => handleChange(e)}
           />
         </div>

@@ -48,16 +48,16 @@ function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
 
     if (result) {
       setReadingLists((readingLists) => {
-        let data: ReadingList[] = readingLists;
-        for (let i = 0; i < data.length; i++) {
-          if (data[i].id == id) {
-            // if we find the previous reading list (not updated), update the fields
-            data[i].title = result.title;
-            data[i].body = result.body;
+        const newReadingList: ReadingList[] = readingLists.slice();
+        for (let i = 0; i < newReadingList.length; i++) {
+          if (newReadingList[i].id == id) {
+            // update corresponding field with user-provided data
+            newReadingList[i].title = result.title;
+            newReadingList[i].body = result.body;
           }
         }
 
-        return data;
+        return newReadingList;
       });
     }
   }

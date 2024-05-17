@@ -3,7 +3,7 @@
 import { Book } from "@/api/api";
 import BookForm from "./form";
 import BookTable from "./table";
-import ToggleButton from "../app/toggle-button";
+import ToggleButton from "../misc/toggle-button";
 import { useState } from "react";
 import BookCardList from "./card-list";
 

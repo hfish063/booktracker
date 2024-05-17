@@ -153,8 +153,3 @@ export type ReadingList = {
   title: string;
   body: string;
 };
-
-export type ReadingListModel = {
-  title: string;
-  body: string;
-};

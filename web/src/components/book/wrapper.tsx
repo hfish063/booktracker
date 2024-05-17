@@ -1,11 +1,11 @@
 "use client";
 
 import { Book } from "@/api/api";
-import Form from "./book-form";
-import Table from "../table";
-import ToggleButton from "../toggle-button";
+import BookForm from "./form";
+import BookTable from "./table";
+import ToggleButton from "../misc/toggle-button";
 import { useState } from "react";
-import CardList from "../card-list";
+import BookCardList from "./card-list";
 
 export default function BookWrapper({ data }: BookWrapperParams) {
   const [books, setBooks] = useState(data);
@@ -13,17 +13,17 @@ export default function BookWrapper({ data }: BookWrapperParams) {
   if (!showTable) {
     return (
       <div>
-        <Form setBooks={setBooks} />
+        <BookForm setBooks={setBooks} />
         <ToggleButton handleClick={setTable} />
-        <CardList data={books} />
+        <BookCardList data={books} />
       </div>
     );
   }
   return (
     <>
-      <Form setBooks={setBooks} />
+      <BookForm setBooks={setBooks} />
       <ToggleButton handleClick={setTable} />
-      <Table columns={["Title", "Author", "Action"]} data={books} />
+      <BookTable columns={["Title", "Author", "Action"]} data={books} />
     </>
   );
 }

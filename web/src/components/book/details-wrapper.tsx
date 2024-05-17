@@ -1,6 +1,6 @@
 import { BookDetails } from "@/api/api";
-import BookHeading from "./book-heading";
-import DeleteBookButton from "./delete-book-button";
+import BookHeading from "./heading";
+import DeleteBookButton from "./delete-button";
 import Image from "next/image";
 import { ScrollArea } from "../ui/scroll-area";
 

@@ -1,9 +1,9 @@
 "use client";
 
 import { ReadingList } from "@/api/api";
-import { useState } from "react";
-import ReadingCatalog from "./reading-catalog";
-import ReadingListForm from "./reading-list-form";
+import { useEffect, useState } from "react";
+import ReadingCatalog from "./list";
+import ReadingListForm from "./form";
 
 export default function ReadingListWrapper({ data }: ReadingListWrapperParams) {
   const [readingLists, setReadingLists] = useState(data);

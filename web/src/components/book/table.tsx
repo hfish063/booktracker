@@ -2,9 +2,9 @@
 
 import { Book } from "@/api/api";
 import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
-export default function Table({ columns, data }: TableProps) {
+export default function BookTable({ columns, data }: TableProps) {
   return (
     <table className="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mt-2 mb-2">
       <TableHead columns={columns} />

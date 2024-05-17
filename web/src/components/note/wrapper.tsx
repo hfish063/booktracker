@@ -1,8 +1,8 @@
 "use client";
 
 import { Note } from "@/api/api";
-import NoteList from "./note-list";
-import NoteForm from "./note-form";
+import NoteList from "./list";
+import NoteForm from "./form";
 import { useState } from "react";
 
 export default function NoteWrapper({ data, bookId }: NoteWrapperParams) {

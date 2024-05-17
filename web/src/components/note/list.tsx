@@ -1,5 +1,5 @@
 import { Note, deleteNote } from "@/api/api";
-import DateBadge from "../app/date-badge";
+import DateBadge from "../misc/date-badge";
 import { Dispatch, SetStateAction } from "react";
 import { Button } from "../ui/button";
 

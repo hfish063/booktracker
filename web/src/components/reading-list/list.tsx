@@ -2,6 +2,7 @@ import { ReadingList, deleteReadingList } from "@/api/api";
 import { Dispatch, SetStateAction } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
+import EditReadingListDialog from "./edit-dialog";
 
 export default function ReadingCatalog({
   data,
@@ -27,18 +28,16 @@ export default function ReadingCatalog({
               <CardContent>
                 <div className="flex justify-between">
                   <div className="">{readingList.body}</div>
-                  <div>
+                  <div className="space-x-4 invisible group-hover:visible">
                     <a href={"/list/" + readingList.id}>
-                      <Button
-                        className="invisible group-hover:visible ml-4 mt-2 mb-2"
-                        variant="link"
-                      >
-                        View
-                      </Button>
+                      <Button variant="link">View</Button>
                     </a>
+                    <EditReadingListDialog
+                      list={readingList}
+                      setReadingLists={setReadingLists}
+                    />
                     <Button
-                      className="self-center invisible group-hover:visible ml-4 mt-2 mb-2"
-                      variant="destructive"
+                      variant="link"
                       onClick={() => handleClick(readingList.id)}
                     >
                       Delete

@@ -13,7 +13,7 @@ import {
 import { DialogDescription } from "@radix-ui/react-dialog";
 
 export default function EditReadingListDialog({
-  id,
+  list,
   setReadingLists,
 }: EditReadingListParams) {
   return (
@@ -27,15 +27,16 @@ export default function EditReadingListDialog({
         </DialogHeader>
         <hr></hr>
         <DialogDescription>
-          <EditReadingListForm id={id} setReadingLists={setReadingLists} />
+          <EditReadingListForm list={list} setReadingLists={setReadingLists} />
         </DialogDescription>
       </DialogContent>
     </Dialog>
   );
 }
 
-function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
+function EditReadingListForm({ list, setReadingLists }: EditReadingListParams) {
   const [formData, setFormData] = useState({ title: "", body: "" });
+  const id = list.id;
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -48,15 +49,15 @@ function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
 
     if (result) {
       setReadingLists((readingLists) => {
-        const newReadingList: ReadingList[] = readingLists.slice();
-        for (let i = 0; i < newReadingList.length; i++) {
-          if (newReadingList[i].id == id) {
+        const newData: ReadingList[] = readingLists.slice();
+        for (let i = 0; i < newData.length; i++) {
+          if (newData[i].id == id) {
             // update corresponding field with user-provided data
-            newReadingList[i] = result;
+            newData[i] = result;
           }
         }
 
-        return newReadingList;
+        return newData;
       });
     }
   }
@@ -70,8 +71,8 @@ function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
   }
 
   return (
-    <form className="mt-2 mb-2" onSubmit={(e) => handleSubmit(e)}>
-      <div className="grid gap-6 mb-4 md:grid-cols-2">
+    <form className="space-x-4 space-y-4" onSubmit={(e) => handleSubmit(e)}>
+      <div className="flex flex-col space-y-4">
         <div>
           <label
             htmlFor="name"
@@ -84,6 +85,7 @@ function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
             id="title"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Title"
+            value={list.title}
             onChange={(e) => handleChange(e)}
             required
           />
@@ -100,16 +102,19 @@ function EditReadingListForm({ id, setReadingLists }: EditReadingListParams) {
             id="body"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Body"
+            value={list.body}
             onChange={(e) => handleChange(e)}
           />
         </div>
+        <div>
+          <Button type="submit">Submit</Button>
+        </div>
       </div>
-      <Button type="submit">Submit</Button>
     </form>
   );
 }
 
 type EditReadingListParams = {
-  id: string;
+  list: ReadingList;
   setReadingLists: Dispatch<SetStateAction<ReadingList[]>>;
 };

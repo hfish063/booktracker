@@ -33,11 +33,11 @@ export default function ReadingCatalog({
                       <Button variant="link">View</Button>
                     </a>
                     <EditReadingListDialog
-                      id={readingList.id}
+                      list={readingList}
                       setReadingLists={setReadingLists}
                     />
                     <Button
-                      variant="destructive"
+                      variant="link"
                       onClick={() => handleClick(readingList.id)}
                     >
                       Delete

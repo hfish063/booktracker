@@ -16,3 +16,7 @@ Booktracker is an improved version of an old project of mine, Booktrackerlite.  
 ## Running the Application
 
 Before running the application, it is important to ensure that all `Environment` variables are properly configured.  See the `.env.example` files for more information on this.
+
+## Things to Know
+
+- The format and spacing of book descriptions may be off.  This is because the data is obtained through a webscraper, and the scraped book details may be improperly formatted (i.e. missing spaces or capitalization errors).

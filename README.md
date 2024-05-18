@@ -11,7 +11,7 @@ Booktracker is an improved version of an old project of mine, Booktrackerlite.  
 - Utilizes custom API from my [easybooks-api](https://github.com/hfish063/easybooks-api) project to generate book details
 - Lightweight and easy to run on your local machine
 
-### Examples from the platform
+### Examples from the application
 
 ## Running the Application
 

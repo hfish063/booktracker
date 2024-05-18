@@ -13,7 +13,7 @@ Booktracker is an improved version of an old project of mine, Booktrackerlite.  
 
 ### Examples from the application
 
-## Running the Application
+## Getting Started
 
 Before running the application, it is important to ensure that all `Environment` variables are properly configured.  See the `.env.example` files for more information on this.
 

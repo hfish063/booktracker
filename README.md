@@ -6,8 +6,28 @@ Booktracker is an improved version of an old project of mine, Booktrackerlite.  
 
 ## Running the Application
 
-In order to run the booktracker application, there are a few steps we must take.
+Before running the application, it is important to ensure that all `Environment` variables are properly configured.  See the `.env.example` files for more information on this.
 
-- Clone this repository
-- Navigate to the `web` directory and run the following command `docker build -t frontend .` *Ensure docker is installed and configured on your system.*
-- After building the docker file, run `docker run -p 3000:3000 --add-host host.docker.internal.host-gateway frontend`.  This will start our docker container, and expose the localhost of our machine to it in order to make API calls.
+1. Pull the latest postgres image and run the container as follows
+```bash
+docker pull postgres
+docker run --name booktracker-db -e \
+    POSTGRES_PASSWORD=password \
+    -p 5432:5432 \
+    -d postgres
+```
+
+2. Navigate to the `web` directory and run the following command
+
+```bash
+docker run -t frontend .
+```
+3. After building the docker file, run this command to expose the localhost of your machine.
+
+```bash
+docker run -p 3000:3000 --add-host host.docker.internal.host-gateway frontend
+```
+
+Next is getting the backend API up and running.
+
+1. 

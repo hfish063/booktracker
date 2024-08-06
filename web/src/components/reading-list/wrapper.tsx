@@ -1,7 +1,7 @@
 "use client";
 
 import { ReadingList } from "@/api/api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReadingCatalog from "./list";
 import ReadingListForm from "./form";
 
